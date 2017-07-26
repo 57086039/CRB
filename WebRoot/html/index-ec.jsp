@@ -789,7 +789,7 @@ if (theBrowser.canOnError) {self.onerror = defOnError;}
 var theMenu = new Menu;
 var JoustFrameset = true;
 var statusTimeout = 0;
-var index1 = 'index.html';
+var index1 = 'index.jsp'; //第一次修改
 //var index2 = 'index2.htm';
 //var index3 = 'index3.htm';
 var smCallerWin;
@@ -861,7 +861,7 @@ function initOutlineIcons(imgStore) {
 
 function initialise() {
 	// Tell where to find the various index files it needs
-	index1 = 'index-ec.html';
+	index1 = 'index-ec.jsp';
 	//index2 = 'index2.htm';
 	//index3 = 'index3.htm';
 
@@ -891,35 +891,35 @@ function initialise() {
 	var level5ID = -1;
 	//level表示最高级，level2子级，level3子子级，Document文件，folder文件夹。
 	//Set the initial state of the folder to "open"
-	l2ID = theMenu.addEntry(-1, "Folder", "客户关系管理系统", "mywork.htm", "客户关系管理系统");
+	l2ID = theMenu.addEntry(-1, "Folder", "客户关系管理系统", "mywork.jsp", "客户关系管理系统");
 	
 	L01 = theMenu.addChild(l2ID, "Folder", "营销管理", "", "营销管理...");
-	L0101 = theMenu.addChild(L01, "Document", "销售机会管理", "~sale/list.html", "销售机会管理...");
-	L0102 = theMenu.addChild(L01, "Document", "客户开发计划", "~sale/dev.html", "客户开发计划...");
+	L0101 = theMenu.addChild(L01, "Document", "销售机会管理", "~sale/list.jsp", "销售机会管理...");
+	L0102 = theMenu.addChild(L01, "Document", "客户开发计划", "~sale/dev.jsp", "客户开发计划...");
 
 	
 	L02 = theMenu.addChild(l2ID, "Folder", "客户管理", "", "客户管理...");
-	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "~cust/cust/list.html", "客户信息管理...");
-	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "~cust/lost/list.html", "客户流失管理...");	
+	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "~cust/cust/list.jsp", "客户信息管理...");
+	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "~cust/lost/list.jsp", "客户流失管理...");	
 
 	L03 = theMenu.addChild(l2ID, "Folder", "服务管理", "", "客户服务管理...");
-	L0301 = theMenu.addChild(L03, "Document", "服务创建", "~cust/service/add.html", "服务创建...");
-	L0302 = theMenu.addChild(L03, "Document", "服务分配", "~cust/service/dispatch.html", "服务分配...");
-	L0303 = theMenu.addChild(L03, "Document", "服务处理", "~cust/service/deal.html", "服务处理...");
-	L0304 = theMenu.addChild(L03, "Document", "服务反馈", "~cust/service/feedback.html", "服务反馈...");
-	L0305 = theMenu.addChild(L03, "Document", "服务归档", "~cust/service/arch.html", "服务归档...");
+	L0301 = theMenu.addChild(L03, "Document", "服务创建", "~cust/service/add.jsp", "服务创建...");
+	L0302 = theMenu.addChild(L03, "Document", "服务分配", "~cust/service/dispatch.jsp", "服务分配...");
+	L0303 = theMenu.addChild(L03, "Document", "服务处理", "~cust/service/deal.jsp", "服务处理...");
+	L0304 = theMenu.addChild(L03, "Document", "服务反馈", "~cust/service/feedback.jsp", "服务反馈...");
+	L0305 = theMenu.addChild(L03, "Document", "服务归档", "~cust/service/arch.jsp", "服务归档...");
 	
 	
 	L04 = theMenu.addChild(l2ID, "Folder", "统计报表", "", "统计报表...");
-	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "~rept/contr.html", "客户贡献分析...");
-	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "~rept/cons.html", "客户构成分析...");
-	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "~rept/ser.html", "客户服务分析...");
-	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "~rept/lost.html", "客户流失分析...");
+	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "~rept/contr.jsp", "客户贡献分析...");
+	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "~rept/cons.jsp", "客户构成分析...");
+	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "~rept/ser.jsp", "客户服务分析...");
+	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "~rept/lost.jsp", "客户流失分析...");
 	
 	L05 = theMenu.addChild(l2ID, "Folder", "基础数据", "", "基础数据...");
-	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "~basd/dict.html", "数据字典管理...");
-	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "~basd/product.html", "查询产品信息...");
-	L0503 = theMenu.addChild(L05, "Document", "查询库存", "~basd/storage.html", "查询库存...");
+	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "~basd/dict.jsp", "数据字典管理...");
+	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "~basd/product.jsp", "查询产品信息...");
+	L0503 = theMenu.addChild(L05, "Document", "查询库存", "~basd/storage.jsp", "查询库存...");
         
 	theMenu.entry[l2ID].isopen = true;
 }
@@ -934,23 +934,23 @@ self.defaultStatus = "";
 <!--
 if (self.name == 'menu') {
 	
-	self.location.href = "menu2.html";
+	self.location.href = "menu2.jsp";
 } else {
 	initialise();
-	var thePage = pageFromSearch('Welcome.html', theMenu, true);
+	var thePage = pageFromSearch('Welcome.jsp', theMenu, true);
 	
 //下面用js脚本写FRAMESET结构；
 
 if (theBrowser.IE){
 	self.document.writeln('<frameset rows="*" cols="160,*" border="0"  noresize framespacing="2">'); 
-	self.document.writeln('<frame name="menu" src="menu.html"  border="0" scrolling="auto" marginwidth="0"  leftmargin="0" marginheight="0" APPLICATION="yes">');
-	self.document.writeln('<frame name="text" src="mywork.htm"  frameborder="no"  marginwidth="0" marginheight="0" APPLICATION="yes">');
+	self.document.writeln('<frame name="menu" src="menu.jsp"  border="0" scrolling="auto" marginwidth="0"  leftmargin="0" marginheight="0" APPLICATION="yes">');
+	self.document.writeln('<frame name="text" src="mywork.jsp"  frameborder="no"  marginwidth="0" marginheight="0" APPLICATION="yes">');
 	self.document.writeln('</frameset>');
 }else{
 	self.document.writeln('<frameset rows="*" cols="160,*" border="0"  noresize framespacing="2">'); 
 		self.document.writeln('<frame name="left" frameborder="no"  scrolling="no"  noresize marginwidth="0"  marginheight="0" >');
-		self.document.writeln('<frame name="menu" src="menu.html"  border="0" scrolling="auto" marginwidth="0"  leftmargin="0" marginheight="0" APPLICATION="yes">');
-	self.document.writeln('<frame name="text" src="desk.htm"  frameborder="no"  marginwidth="0" marginheight="0" APPLICATION="yes">');
+		self.document.writeln('<frame name="menu" src="menu.jsp"  border="0" scrolling="auto" marginwidth="0"  leftmargin="0" marginheight="0" APPLICATION="yes">');
+	self.document.writeln('<frame name="text" src="desk.jsp"  frameborder="no"  marginwidth="0" marginheight="0" APPLICATION="yes">');
 	self.document.writeln('</frameset>');
 }
 

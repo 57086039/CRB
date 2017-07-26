@@ -1,9 +1,17 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags"  prefix="s"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+
 <HTML>
 <HEAD>
 <TITLE>login_</TITLE>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <style>
-	th{
+   th{
 		font-size:12px;
 		text-align:right;
 		font-weight:normal;
@@ -63,22 +71,28 @@
 			<IMG SRC="html/images/login/login_09.jpg" WIDTH=15 HEIGHT=141 ALT=""></TD>
 		
     <TD COLSPAN=2 ROWSPAN=2 background="html/images/login/login_10.jpg" >
-<table width="100%">
+  <form style="display: inline;" method="post" action="login!login.action">
+   <table width="100%" >
+  
         <tr> 
-          <th>�û���</th>看看
-          <td><input size="10" maxlength="20" /></td>
+          <th>用户名:</th>
+          <td><input size="10" maxlength="20" name="uname"/></td>
         </tr>
         <tr> 
-          <th>����</th>
-          <td><input type="password" size="10" maxlength="20" /></td>
+          <th>密码:</th>
+          <td><input type="password" size="10" maxlength="20" name="upwd"/></td>
         </tr>
         <tr> 
           <td>&nbsp;</td>
-          <td><img onclick="window.location.href='html/index.html'" src="html/images/login/login_button.jpg" width="73" height="25"></td>
+          <td><input type="submit" value="登录"></td>
+          
         </tr>
+       <tr>
+       <td colspan="2"><span>${request.tishi }</span></td>
+       </tr>
       </table>
 
-	
+	</form>
     </TD>
 		<TD COLSPAN=2>
 			<IMG SRC="html/images/login/login_11.jpg" WIDTH=304 HEIGHT=86 ALT=""></TD>
@@ -108,7 +122,7 @@
 	<TR>
 		
     <TD COLSPAN=7 background="html/images/login/login_16.jpg" style="text-align:right;padding-right:25px;"> 
-			&copy; 2008 ��������̩�˱���������Ϣ�������޹�˾
+			&copy; 2017 宏拓新创第五项目小组
     </TD>
 		<TD>
 			<IMG SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=55 ALT=""></TD>

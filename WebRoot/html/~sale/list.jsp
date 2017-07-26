@@ -45,8 +45,8 @@
 		<td class="list_data_text">13729239239</td>
 		<td class="list_data_text">2007年12月06日</td>
 		<td class="list_data_op">
-			<img onclick="to('dispatch.html');" title="指派" src="../images/bt_linkman.gif" class="op_button" />
-			<img onclick="to('edit.html');" title="编辑" src="../images/bt_edit.gif" class="op_button" />
+			<img onclick="to('dispatch.jsp');" title="指派" src="../images/bt_linkman.gif" class="op_button" />
+			<img onclick="to('edit.jsp');" title="编辑" src="../images/bt_edit.gif" class="op_button" />
 			<img onclick="del('“销售机会：采购笔记本电脑意向”');" title="删除" src="../images/bt_del.gif" class="op_button" />
 			
 		</td>

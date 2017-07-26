@@ -6,7 +6,7 @@
   </head>
   <body style="font-size:12px;color:dark-blue;scroll:no;border-top:solid 1px #666;">
 <div style="text-align:right;padding:6px;">
-		&copy;  2008 北大青鸟APTECH(涞水慧仁)授权培训中心 Y272班 第7组
+		&copy;  2017 北大青鸟APTECH(千硕)授权培训中心 Yj42班 第5组
 </div>
   </body>
 </html>
