@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
+import org.java.entity.Chancetable;
 import org.java.entity.Systemusertable;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,7 +16,15 @@ public class BaseAction extends ActionSupport implements ServletRequestAware,Ser
     HttpServletResponse res;
     private String uname;
     private String upwd;
-    
+    private Chancetable ct;
+    protected Integer index;
+    protected Integer size;
+	public Chancetable getCt() {
+		return ct;
+	}
+	public void setCt(Chancetable ct) {
+		this.ct = ct;
+	}
 	public String getUname() {
 		return uname;
 	}

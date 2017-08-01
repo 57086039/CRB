@@ -15,18 +15,27 @@ public class Chancetable implements java.io.Serializable {
 	private String cid;
 	private Systemusertable systemusertable;
 	private Chancestatetable chancestatetable;
-	private String csource;
-	private String clientelename;
-	private Short codds;
-	private String coutline;
-	private String cointactsname;
-	private String contactsphone;
-	private String describe;
-	private Date createdate;
+	private String csource;  //机会来源
+	private String clientelename;//客户名称
+	private Short codds;   //当前机会的成功几率
+	private String coutline; //当前销售机会的概要信息
+	private String cointactsname; //当前机会的主要联系人
+	private String contactsphone;//联系电话
+	private String describe;   //对当前机会的描述
+	private Date createdate;//机会创建的时间
 	private Set plantables = new HashSet(0);
 	private Set chancedistables = new HashSet(0);
+	private String time;
 
 	// Constructors
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 	/** default constructor */
 	public Chancetable() {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <package name="lu" extends="struts-default" namespace="/lu">
+     <action name="chance" class="org.java.web.ImplAction">
+     <result name="jihui" >/htmlCRM/html/~sale/list.jsp</result>
+     <result name="add">/htmlCRM/html/~sale/add.jsp</result>
+   </action>
+  
+   </package>
+  
+</struts>    

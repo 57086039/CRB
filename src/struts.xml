@@ -3,8 +3,9 @@
 <struts>
   <package name="struts2" extends="struts-default" namespace="/">
    <action name="login" class="org.java.web.ImplAction">
-     <result name="login">/html/index.jsp</result>
-     <result name="index">/login.jsp</result>
+     <result name="login">/htmlCRM/content.jsp</result>
+     <result name="index">/htmlCRM/index.jsp</result>
       </action>
    </package>
+   <include file="struts-lu.xml"/>
 </struts>    

@@ -9,6 +9,7 @@ import org.junit.Test;
 public class ImplDao {
 	 Session ses=HibernateSessionFactory.getSession();
 	 
+	 
    public Systemusertable users(String name,String pwd){
 	   
 	     Query quers=ses.createSQLQuery("select f.* from systemusertable f where suname=? and supwd=?").addEntity(Systemusertable.class);
