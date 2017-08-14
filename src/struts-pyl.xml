@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+	<package name="struts-pyl" extends="struts-default" namespace="/pyl">
+   		<action name="service" class="org.java.web.serviceAction">
+   			<result name="add">/htmlCRM/html/cust/service/add.jsp</result>
+   			<result name="service">/htmlCRM/html/cust/service/dispatch.jsp</result>
+   			<result name="ServiceHandle">/htmlCRM/html/cust/service/deal.jsp</result>
+   			<result name="feedBack">/htmlCRM/html/cust/service/feedback.jsp</result>
+   			<result name="File">/htmlCRM/html/cust/service/arch.jsp</result>
+   			<result name="deal_detail">/htmlCRM/html/cust/service/deal_detail.jsp</result>
+   			<result name="feedback_detail">/htmlCRM/html/cust/service/feedback_detail.jsp</result>
+   			<result name="detail">/htmlCRM/html/cust/service/detail.jsp</result>
+      	</action>
+      	<action name="ajax" class="org.java.web.serviceAction"></action>
+   </package>
+</struts>
