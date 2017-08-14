@@ -19,12 +19,7 @@
         <property name="supwd" type="java.lang.String">
             <column name="SUPWD" length="30" not-null="true" />
         </property>
-        <set name="chancetables" inverse="true">
-            <key>
-                <column name="SUID" length="11" />
-            </key>
-            <one-to-many class="org.java.entity.Chancetable" />
-        </set>
+       
         <set name="clienttables" inverse="true">
             <key>
                 <column name="SUID" length="11" />

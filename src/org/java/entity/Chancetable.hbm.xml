@@ -10,7 +10,7 @@
             <column name="CID" length="20" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="systemusertable" class="org.java.entity.Systemusertable" fetch="select">
+        <many-to-one name="systemusertable" class="org.java.entity.Systemusertable" lazy="false" fetch="select">
             <column name="SUID" length="11" />
         </many-to-one>
         <many-to-one name="chancestatetable" class="org.java.entity.Chancestatetable" fetch="select">
@@ -46,11 +46,6 @@
             </key>
             <one-to-many class="org.java.entity.Plantable" />
         </set>
-        <set name="chancedistables" inverse="true">
-            <key>
-                <column name="CID" length="20" />
-            </key>
-            <one-to-many class="org.java.entity.Chancedistable" />
-        </set>
+       
     </class>
 </hibernate-mapping>

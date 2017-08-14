@@ -38,8 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<dt>营销管理</dt>
 				<dd>
 					<ul class="clearfix">
-						<li><a href="javascript:;" _link="<%=path %>/lu/chance!markplan.action">销售机会管理</a></li>
-						<li><a href="javascript:;" _link="<%=path %>/htmlCRM/html/sale/dev.jsp">客户开发计划</a></li>
+						<li><a href="javascript:;" _link="<%=path %>/lu/chance!chushi.action">销售机会管理</a></li>
+						<li><a href="javascript:;" _link="<%=path %>/lu/kaifa!chushi.action">客户开发计划</a></li>
 					</ul>
 				</dd>
 			</dl>

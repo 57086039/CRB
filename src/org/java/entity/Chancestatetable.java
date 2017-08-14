@@ -11,7 +11,7 @@ public class Chancestatetable implements java.io.Serializable {
 
 	// Fields
 
-	private Byte csid;
+	private Integer csid;
 	private String cspoint;
 	private Set chancetables = new HashSet(0);
 
@@ -22,13 +22,13 @@ public class Chancestatetable implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Chancestatetable(Byte csid, String cspoint) {
+	public Chancestatetable(Integer csid, String cspoint) {
 		this.csid = csid;
 		this.cspoint = cspoint;
 	}
 
 	/** full constructor */
-	public Chancestatetable(Byte csid, String cspoint, Set chancetables) {
+	public Chancestatetable(Integer csid, String cspoint, Set chancetables) {
 		this.csid = csid;
 		this.cspoint = cspoint;
 		this.chancetables = chancetables;
@@ -36,11 +36,11 @@ public class Chancestatetable implements java.io.Serializable {
 
 	// Property accessors
 
-	public Byte getCsid() {
+	public Integer getCsid() {
 		return this.csid;
 	}
 
-	public void setCsid(Byte csid) {
+	public void setCsid(Integer csid) {
 		this.csid = csid;
 	}
 

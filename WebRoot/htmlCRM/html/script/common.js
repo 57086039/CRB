@@ -2,7 +2,7 @@ function reload(){
 	window.location.reload();
 }
 function help(msg){
-	alert('»¶Ó­Ê¹ÓÃ'+msg);
+	alert('æ¬¢è¿ä½¿ç”¨'+msg);
 }
 
 function to(url){
@@ -12,22 +12,19 @@ function back(){
 	history.go(-1);
 }
 function save(url){
-	alert('±£´æ³É¹¦£¡');
+	alert('ä¿å­˜æˆåŠŸï¼');
 	to(url);
 }
 function add(url){
-	alert('ĞÂ½¨³É¹¦£¡');
-	to(url);
+	alert(url);
+	
 }
-function del(msg){
-	if (window.confirm("È·ÈÏÉ¾³ı"+msg+"£¿")){
-		reload();
-	}
-}
+
 function setCurTime(oid){
+
 	var now=new Date();
-	var year=now.getYear();
-	var month=now.getMonth();
+	var year=now.getFullYear();
+	var month=now.getMonth()+1;
 	var day=now.getDate();
 	var hours=now.getHours();
 	var minutes=now.getMinutes();
