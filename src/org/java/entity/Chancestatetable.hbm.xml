@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
     <class name="org.java.entity.Chancestatetable" table="CHANCESTATETABLE" schema="LUWEI">
-        <id name="csid" type="java.lang.Byte">
+        <id name="csid" type="java.lang.Integer">
             <column name="CSID" precision="2" scale="0" />
             <generator class="assigned" />
         </id>

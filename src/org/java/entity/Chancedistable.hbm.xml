@@ -8,7 +8,9 @@
     <class name="org.java.entity.Chancedistable" table="CHANCEDISTABLE" schema="LUWEI">
         <id name="cdid" type="java.lang.Long">
             <column name="CDID" precision="11" scale="0" />
-            <generator class="assigned" />
+            <generator class="sequence">
+              <param name="sequence" >chanceDistable_seq</param>
+            </generator>
         </id>
         <many-to-one name="systemusertable" class="org.java.entity.Systemusertable" fetch="select">
             <column name="SUID" length="11" />

@@ -3,10 +3,15 @@
 <struts>
   <package name="lu" extends="struts-default" namespace="/lu">
      <action name="chance" class="org.java.web.ImplAction">
-     <result name="jihui" >/htmlCRM/html/~sale/list.jsp</result>
-     <result name="add">/htmlCRM/html/~sale/add.jsp</result>
+     <result name="jihui" >/htmlCRM/html/sale/list.jsp</result>
+     <result name="zp">/htmlCRM/html/sale/dispatch.jsp</result>
+     <result name="bianji">/htmlCRM/html/sale/edit.jsp</result>
    </action>
-  
+      <action name="kaifa" class="org.java.web.LayDeve">
+         <result name="deve">/htmlCRM/html/sale/dev.jsp</result>
+         <result name="zd">/htmlCRM/html/sale/dev_plan.jsp</result>
+         <result name="zx">/htmlCRM/html/sale/dev_execute.jsp</result>
+      </action>
    </package>
   
 </struts>    

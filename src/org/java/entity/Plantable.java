@@ -10,7 +10,7 @@ public class Plantable implements java.io.Serializable {
 
 	// Fields
 
-	private Long planid;
+	private Integer planid;
 	private Chancetable chancetable;
 	private Date plandate;
 	private String planitem;
@@ -23,13 +23,13 @@ public class Plantable implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Plantable(Long planid, String planitem) {
+	public Plantable(Integer planid, String planitem) {
 		this.planid = planid;
 		this.planitem = planitem;
 	}
 
 	/** full constructor */
-	public Plantable(Long planid, Chancetable chancetable, Date plandate,
+	public Plantable(Integer planid, Chancetable chancetable, Date plandate,
 			String planitem, String effect) {
 		this.planid = planid;
 		this.chancetable = chancetable;
@@ -40,11 +40,11 @@ public class Plantable implements java.io.Serializable {
 
 	// Property accessors
 
-	public Long getPlanid() {
+	public Integer getPlanid() {
 		return this.planid;
 	}
 
-	public void setPlanid(Long planid) {
+	public void setPlanid(Integer planid) {
 		this.planid = planid;
 	}
 
