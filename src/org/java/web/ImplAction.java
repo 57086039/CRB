@@ -15,21 +15,29 @@ import javax.servlet.ServletException;
 import org.java.dao.ImplDao;
 import org.java.dao.marketingManagementDao;
 import org.java.entity.Chancetable;
+import org.java.entity.Menutable;
+import org.java.entity.Menutwo;
 import org.java.entity.Systemusertable;
 import org.java.util.HibernateSessionFactory;
 
 public class ImplAction extends BaseAction{
      ImplDao dao=new ImplDao();
 
-	public String login(){  //登陆
+	public String login(){  //登录
 		up();
 		 Systemusertable users=dao.users(getUname(), getUpwd());
 		   System.out.println(getUname()+" "+getUpwd());
 		if(users!=null){
 			 req.getSession().setAttribute("users",users);
+			req.getSession().setAttribute("munus", users.getRestricttable().getMenus());
+			req.getSession().setAttribute("munus2", users.getRestricttable().getMenus2());
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			for(Menutable m:users.getRestricttable().getMenus()){
+				System.out.println(m.getMaction());
+			}
 			 return "login";
 		}else{
-			req.setAttribute("tishi", "用户名或者密码！");
+			req.setAttribute("提示", "请先登录");
 			return "index";
 		}
 		 
@@ -45,7 +53,7 @@ public class ImplAction extends BaseAction{
 	
 	/**
 	 * 
-	 * 得到销售机会表
+	 * 寰楀埌閿�敭鏈轰細琛�
 	 * ***/
 	public String  markplan() throws Exception{  
 		marketingManagementDao mdao=new marketingManagementDao();
@@ -54,9 +62,9 @@ public class ImplAction extends BaseAction{
 		  for (Chancetable chancetable : list1) {
 			   // chancetable.setCreatedate(new SimpleDateFormat("yyyy-MM-dd").format(chancetable.getCreatedate().));
 		      Date d=chancetable.getCreatedate();
-		      SimpleDateFormat st=new SimpleDateFormat("yyyy年-MM月-dd日");
-		        String aa= st.format(d);
-		        chancetable.setTime(aa);
+		      SimpleDateFormat st=new SimpleDateFormat("yyyy-MM-dd");
+		      String aa= st.format(d);
+		      //chancetable.setTime(aa);
 		      list.add(chancetable);
 		  }
 		   req.setAttribute("list", list);
@@ -66,7 +74,7 @@ public class ImplAction extends BaseAction{
 		   return "jihui";
 	}
 	/**
-	 * 分页筛选
+	 *分页
 	 * 
 	 * ****/
 	public void paging(){
@@ -75,7 +83,7 @@ public class ImplAction extends BaseAction{
 	
 	
 	/**
-	 * 加载所有客户经理
+	 * 鍔犺浇鎵�湁瀹㈡埛缁忕悊
 	 * */
     public String add(){
     	marketingManagementDao  mdao= new marketingManagementDao();
@@ -85,7 +93,7 @@ public class ImplAction extends BaseAction{
    	 return "add";
     }	
     /*
-     * 添加销售机会表
+     * 娣诲姞閿�敭鏈轰細琛�
      * **/
 	public String insert() throws Exception{
 		marketingManagementDao  mdao= new marketingManagementDao();

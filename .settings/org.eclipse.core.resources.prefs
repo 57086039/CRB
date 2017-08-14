@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebRoot/htmlCRM/html/sale/add.jsp=UTF-8
 encoding//WebRoot/htmlCRM/html/sale/list.jsp=UTF-8
+encoding//WebRoot/htmlCRM/lib/utf8-php/php/config.json=UTF-8
+encoding//src/org/java/entity/Chancetable.java=UTF-8
+encoding//src/org/java/web/ImplAction.java=UTF-8

@@ -11,7 +11,7 @@ public class Feedbacktable implements java.io.Serializable {
 	private Long feedid;
 	private Servicetable servicetable;
 	private String feedcontent;
-	private Boolean feedgrade;
+	private Integer feedgrade;
 
 	// Constructors
 
@@ -27,7 +27,7 @@ public class Feedbacktable implements java.io.Serializable {
 
 	/** full constructor */
 	public Feedbacktable(Long feedid, Servicetable servicetable,
-			String feedcontent, Boolean feedgrade) {
+			String feedcontent, Integer feedgrade) {
 		this.feedid = feedid;
 		this.servicetable = servicetable;
 		this.feedcontent = feedcontent;
@@ -60,11 +60,11 @@ public class Feedbacktable implements java.io.Serializable {
 		this.feedcontent = feedcontent;
 	}
 
-	public Boolean getFeedgrade() {
+	public Integer getFeedgrade() {
 		return this.feedgrade;
 	}
 
-	public void setFeedgrade(Boolean feedgrade) {
+	public void setFeedgrade(Integer feedgrade) {
 		this.feedgrade = feedgrade;
 	}
 

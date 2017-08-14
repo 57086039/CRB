@@ -2,7 +2,7 @@
     <wb-module deploy-name="CRB">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="CRB"/>
         <property name="java-output-path" value="/CRB/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/CRB"/>
     </wb-module>
 </project-modules>

@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags"  prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -34,7 +35,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 头部页面结束 -->
 	<div class="leftmenu">
 		<div class="leftmenu_0">
+			<c:forEach items="${ sessionScope.munus2}" var="mm">
 			<dl>
+				<dt>${ mm.mtname}</dt>
+				<dd>
+					<ul class="clearfix">
+					<c:forEach items="${ sessionScope.munus}" var="m">
+							<c:if   test="${m.mstate==mm.mtstate }">
+								<li><a href="javascript:;" _link="<%=path %>/${m.maction }">${ m.mname}</a></li>
+							</c:if>
+					</c:forEach>
+					</ul>
+				</dd>
+			</dl>
+			</c:forEach>
+			<%-- <dl>
 				<dt>营销管理</dt>
 				<dd>
 					<ul class="clearfix">
@@ -57,11 +72,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<dt>服务管理</dt>
 				<dd>
 					<ul class="clearfix">
-						<li><a href="javascript:;"  _link="<%=path %>/htmlCRM/html/cust/service/add.jsp">服务创建</a></li>
-						<li><a href="javascript:;"  _link="<%=path %>/htmlCRM/html/cust/service/dispatch.jsp">服务分配</a></li>
-						<li><a href="javascript:;"  _link="<%=path %>/htmlCRM/html/cust/service/deal.jsp">服务处理</a></li>
-						<li><a href="javascript:;"  _link="<%=path %>/htmlCRM/html/cust/service/feedback.jsp">服务反馈</a></li>
-						<li><a href="javascript:;"  _link="<%=path %>/htmlCRM/html/cust/service/arch.jsp">服务归档</a></li>						
+						<li><a href="javascript:;"  _link="<%=path %>/pyl/service!findtype.action">服务创建</a></li>
+						<li><a href="javascript:;"  _link="<%=path %>/pyl/service!findService.action?ssid=2">服务分配</a></li>
+						<li><a href="javascript:;"  _link="<%=path %>/pyl/service!findService.action?ssid=3">服务处理</a></li>
+						<li><a href="javascript:;"  _link="<%=path %>/pyl/service!findService.action?ssid=4">服务反馈</a></li>
+						<li><a href="javascript:;"  _link="<%=path %>/pyl/service!findService.action?ssid=0">服务归档</a></li>						
 					</ul>
 				</dd>
 			</dl>
@@ -85,7 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li><a href="javascript:;" _link="<%=path %>/htmlCRM/html/basd/storage.jsp">查询库存</a></li>				
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 		</div>
 		<!-- leftmenu_0结束 -->
 		<div class="leftmenu_0 hidden">
