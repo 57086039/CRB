@@ -30,8 +30,13 @@ $(function(){
 <div class="page_title">客户开发计划 &gt; 制定计划</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
+	<c:if test="${users.restricttable.rid!=8}">
 	<button class="common_button" onclick="to('<%=path %>/lu/kaifa!zhixing.action');">执行计划</button>
-	<button class="common_button" onclick="back();">返回</button>
+	</c:if>
+	<c:if test="${users.restricttable.rid==8}">
+	<button class="common_button" onclick="alert('请安排被指派的客户经理执行计划')">执行计划</button>
+	</c:if>
+	<button class="common_button" onclick="to('<%=path %>/lu/kaifa!chushi.action');">返回</button>
 </div>
 <table class="query_form_table">
 	<tr>

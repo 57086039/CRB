@@ -108,11 +108,11 @@ function del(msg){
 		<c:if test="${users.restricttable.rid==8||users.suid==k.ZHIPAI }">
 			<img onclick="to('<%=path %>/lu/kaifa!zhiding.action?cid=${k.CID }');" title="制定计划" src="<%=path %>/htmlCRM/html/images/bt_plan.gif" class="op_button" />
 		</c:if>
-		<c:if test="${users.restricttable.rid==8||users.suid==k.ZHIPAI }">
-			<img onclick="to('<%=path %>/htmlCRM/html/sale/dev_execute.html');" title="执行计划" src="<%=path %>/htmlCRM/html/images/bt_feedback.gif" class="op_button" />
+		<c:if test="${users.suid==k.ZHIPAI }">
+			<img onclick="to('<%=path %>/lu/kaifa!zhixing.action?cid=${k.CID }');" title="执行计划" src="<%=path %>/htmlCRM/html/images/bt_feedback.gif" class="op_button" />
 			</c:if>
-			<c:if test="${users.restricttable.rid==8||users.suid==k.ZHIPAI }">
-			<img onclick="alert('用户开发成功，已添加新客户记录。');" title="开发成功" src="<%=path %>/htmlCRM/html/images/bt_yes.gif" class="op_button" />
+			<c:if test="${users.suid==k.ZHIPAI }">
+			<img onclick="alert('用户开发成功，已添加新客户记录。');window.location.href='<%=path %>/lu/kaifa!succeed.action?cid=${k.CID }';" title="开发成功" src="<%=path %>/htmlCRM/html/images/bt_yes.gif" class="op_button" />
 		</c:if>
 		</td>
 		</c:if>
@@ -124,11 +124,17 @@ function del(msg){
 <div class="pager">
 	共${count }条记录 每页<input value=${size } size="2" id="s1"/>条
 	第<input value="${index }" size="2"/>页/共<span >${MaxPage }</span>页
-	<c:if test="${requestScope.index==1&&requestScope.count!=1 }">
+	<c:if test="${requestScope.index==1&&requestScope.MaxPage!=1 }">
 	   <a href="<%=path %>/lu/kaifa!paging.action?index=1" >第一页</a>
 	   <a href="#" id="shang">上一页</a>
 	   <a href="<%=path %>/lu/kaifa!paging.action?index=${index+1}" >下一页</a>
 	   <a href="<%=path %>/lu/kaifa!paging.action?index=${MaxPage}" >最后一页</a>
+	</c:if>
+	<c:if test="${requestScope.index==1&&requestScope.MaxPage==1 }">
+	   <a href="<%=path %>/lu/chance!paging.action?index=1" >第一页</a>
+	   <a href="#" id="shang">上一页</a>
+	   <a href="#" id="xia">下一页</a>
+	   <a href="<%=path %>/lu/chance!paging.action?index=${MaxPage}" >最后一页</a>
 	</c:if>
 	 <c:if test="${requestScope.index!=1&&requestScope.index!=requestScope.MaxPage }">
 	<a href="<%=path %>/lu/kaifa!paging.action?index=1">第一页</a>

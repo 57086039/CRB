@@ -13,11 +13,29 @@ public class Clienttable implements java.io.Serializable {
 
 	private String clientid;
 	private Systemusertable systemusertable;
+	@Override
+	public String toString() {
+		return "Clienttable [clientid=" + clientid + ", systemusertable="
+				+ systemusertable + ", enterprisegrade=" + enterprisegrade
+				+ ", clientname=" + clientname + ", area=" + area
+				+ ", satisficing=" + satisficing + ", creditgrder="
+				+ creditgrder + ", csite=" + csite + ", postalcode="
+				+ postalcode + ", phone=" + phone + ", fax=" + fax + ", curl="
+				+ curl + ", license=" + license + ", legalpreson="
+				+ legalpreson + ", registeredprice=" + registeredprice
+				+ ", annualprice=" + annualprice + ", depositbank="
+				+ depositbank + ", banknumber=" + banknumber
+				+ ", governmentnumber=" + governmentnumber + ", centralnumber="
+				+ centralnumber + ", ordertables=" + ordertables
+				+ ", contacttables=" + contacttables + ", servicetables="
+				+ servicetables + ", losstables=" + losstables + "]";
+	}
+
 	private Enterprisegrade enterprisegrade;
 	private String clientname;
 	private String area;
-	private Boolean satisficing;
-	private Boolean creditgrder;
+	private Integer satisficing;
+	private Integer creditgrder;
 	private String csite;
 	private String postalcode;
 	private String phone;
@@ -44,7 +62,7 @@ public class Clienttable implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Clienttable(String clientid, String clientname, String area,
-			Boolean satisficing, Boolean creditgrder, String csite,
+			Integer satisficing, Integer creditgrder, String csite,
 			String postalcode, String phone, String fax, String curl,
 			String legalpreson, String depositbank, String banknumber) {
 		this.clientid = clientid;
@@ -65,7 +83,7 @@ public class Clienttable implements java.io.Serializable {
 	/** full constructor */
 	public Clienttable(String clientid, Systemusertable systemusertable,
 			Enterprisegrade enterprisegrade, String clientname, String area,
-			Boolean satisficing, Boolean creditgrder, String csite,
+			Integer satisficing, Integer creditgrder, String csite,
 			String postalcode, String phone, String fax, String curl,
 			String license, String legalpreson, Double registeredprice,
 			Double annualprice, String depositbank, String banknumber,
@@ -139,19 +157,19 @@ public class Clienttable implements java.io.Serializable {
 		this.area = area;
 	}
 
-	public Boolean getSatisficing() {
+	public Integer getSatisficing() {
 		return this.satisficing;
 	}
 
-	public void setSatisficing(Boolean satisficing) {
+	public void setSatisficing(Integer satisficing) {
 		this.satisficing = satisficing;
 	}
 
-	public Boolean getCreditgrder() {
+	public Integer getCreditgrder() {
 		return this.creditgrder;
 	}
 
-	public void setCreditgrder(Boolean creditgrder) {
+	public void setCreditgrder(Integer	 creditgrder) {
 		this.creditgrder = creditgrder;
 	}
 

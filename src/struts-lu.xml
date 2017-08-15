@@ -11,6 +11,7 @@
          <result name="deve">/htmlCRM/html/sale/dev.jsp</result>
          <result name="zd">/htmlCRM/html/sale/dev_plan.jsp</result>
          <result name="zx">/htmlCRM/html/sale/dev_execute.jsp</result>
+         <result name="succ">/htmlCRM/html/sale/xinxi.jsp</result>
       </action>
    </package>
   

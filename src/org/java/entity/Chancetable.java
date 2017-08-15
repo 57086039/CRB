@@ -12,6 +12,19 @@ public class Chancetable implements java.io.Serializable {
 
 	// Fields
 
+	@Override
+	public String toString() {
+		return "Chancetable [cid=" + cid + ", systemusertable="
+				+ systemusertable + ", chancestatetable=" + chancestatetable
+				+ ", csource=" + csource + ", clientelename=" + clientelename
+				+ ", codds=" + codds + ", coutline=" + coutline
+				+ ", cointactsname=" + cointactsname + ", contactsphone="
+				+ contactsphone + ", describe=" + describe + ", createdate="
+				+ createdate + ", plantables=" + plantables
+				+ ", chancedistables=" + chancedistables + ", time=" + time
+				+ "]";
+	}
+
 	private String cid;
 	private Systemusertable systemusertable;
 	private Chancestatetable chancestatetable;

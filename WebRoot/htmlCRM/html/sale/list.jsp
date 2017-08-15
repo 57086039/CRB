@@ -28,7 +28,7 @@ $(function(){
 		
 		var index=$("#index").val();
 		var size=$("#s1").val();
-		alert(size);
+	
 		window.location.href="../lu/chance!shuaxin.action?index="+index+"&size="+size;
 		/* $.post("../lu/ajax!shuaxin.action",{"index":index},function(data){
 			alert("ss");
@@ -46,8 +46,8 @@ $(function(){
 });
 
 function del(msg){
-	alert(msg);
-	if (window.confirm("确认删除吗？")){
+	
+	if (window.confirm("确认删除吗？概要"+msg)){
 		
 		
 		window.location.href="../lu/chance!del.action?cid="+msg;
@@ -87,7 +87,7 @@ function del(msg){
 		<th>创建时间</th>
 		<th>操作</th>
 	</tr>
-	<s:iterator value="#request.list" var="k">
+	<c:forEach items="${list }" var="k">
 	<tr>
 		<td id="cid" class="list_data_number">${ k.cid}</td>
 		<td class="list_data_text">${k.clientelename}</td>
@@ -101,41 +101,40 @@ function del(msg){
 			<c:if test="${users.restricttable.rid==8}">
 			<img onclick="to('<%=path %>/lu/chance!zhipai.action?id=${k.cid }');" title="指派" src="<%=path %>/htmlCRM/html/images/bt_linkman.gif" class="op_button" />
 			</c:if>
-			<c:if test="${users.restricttable.rid!=8}">
-			<img onclick="window.alert('对不起，权限不够')" title="指派" src="<%=path %>/htmlCRM/html/images/bt_linkman.gif" class="op_button" />
-			</c:if>
 			<c:if test="${users.restricttable.rid==8 }">
 			<img onclick="to('<%=path %>/lu/chance!bianji.action?cid=${k.cid }');" title="编辑" src="<%=path %>/htmlCRM/html/images/bt_edit.gif" class="op_button" />
 			</c:if>
-			<c:if test="${ k.systemusertable.suid!=users.suid&&users.restricttable.rid!=8}">
-			<img onclick="window.alert('对不起，你只能修改自己创建的');" title="编辑" src="<%=path %>/htmlCRM/html/images/bt_edit.gif" class="op_button" />
-			</c:if>
+		
 			<c:if test="${ k.systemusertable.suid==users.suid&&users.restricttable.rid!=8}">
 			<img onclick="to('<%=path %>/lu/chance!bianji.action?cid=${k.cid }');" title="编辑" src="<%=path %>/htmlCRM/html/images/bt_edit.gif" class="op_button" />
 			
 			</c:if>
 			<c:if test="${ k.systemusertable.suid==users.suid&&users.restricttable.rid!=8}">
-			<img onclick="del('“销售机会：${k.coutline}”');" title="删除" src="<%=path %>/htmlCRM/html/images/bt_del.gif" class="op_button" />
+			<img onclick="del('${k.coutline}');" title="删除" src="<%=path %>/htmlCRM/html/images/bt_del.gif" class="op_button" />
 		    </c:if>
-		    <c:if test="${k.systemusertable.suid!=users.suid&&users.restricttable.rid!=8}">
-			<img onclick="window.alert('对不起，你只能删除自己创建的');" title="删除" src="<%=path %>/htmlCRM/html/images/bt_del.gif" class="op_button" />
-		    </c:if>
+		  
 		    <c:if test="${users.restricttable.rid==8}">
-			<img onclick="del('${k.cid}');" title="删除" src="<%=path %>/htmlCRM/html/images/bt_del.gif" class="op_button" />
+			<img onclick="del('${k.coutline}');" title="删除" src="<%=path %>/htmlCRM/html/images/bt_del.gif" class="op_button" />
 		    </c:if>
 			
 		</td>
 	</tr>
-	</s:iterator>
+  </c:forEach>
 	<tr>
 		<th colspan="7" class="pager">
 <div class="pager">
 	共${count }条记录 每页<input value=${size } size="2" id="s1"/>条
 	第<input value="${index }" size="2"/>页/共<span >${MaxPage }</span>页
-	<c:if test="${requestScope.index==1&&requestScope.count!=1 }">
+	<c:if test="${requestScope.index==1&&requestScope.MaxPage!=1 }">
 	   <a href="<%=path %>/lu/chance!paging.action?index=1" >第一页</a>
 	   <a href="#" id="shang">上一页</a>
 	   <a href="<%=path %>/lu/chance!paging.action?index=${index+1}" >下一页</a>
+	   <a href="<%=path %>/lu/chance!paging.action?index=${MaxPage}" >最后一页</a>
+	</c:if>
+	<c:if test="${requestScope.index==1&&requestScope.MaxPage==1 }">
+	   <a href="<%=path %>/lu/chance!paging.action?index=1" >第一页</a>
+	   <a href="#" id="shang">上一页</a>
+	   <a href="#" id="xia">下一页</a>
 	   <a href="<%=path %>/lu/chance!paging.action?index=${MaxPage}" >最后一页</a>
 	</c:if>
 	 <c:if test="${requestScope.index!=1&&requestScope.index!=requestScope.MaxPage }">

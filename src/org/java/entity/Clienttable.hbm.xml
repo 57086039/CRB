@@ -22,11 +22,11 @@
         <property name="area" type="java.lang.String">
             <column name="AREA" length="50" not-null="true" />
         </property>
-        <property name="satisficing" type="java.lang.Boolean">
-            <column name="SATISFICING" precision="1" scale="0" not-null="true" />
+        <property name="satisficing" type="java.lang.Integer">
+            <column name="SATISFICING" precision="2" scale="0" not-null="true" />
         </property>
-        <property name="creditgrder" type="java.lang.Boolean">
-            <column name="CREDITGRDER" precision="1" scale="0" not-null="true" />
+        <property name="creditgrder" type="java.lang.Integer">
+            <column name="CREDITGRDER" precision="2" scale="0" not-null="true" />
         </property>
         <property name="csite" type="java.lang.String">
             <column name="CSITE" length="100" not-null="true" />

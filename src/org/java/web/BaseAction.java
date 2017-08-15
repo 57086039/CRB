@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.java.entity.Chancetable;
+import org.java.entity.Clienttable;
 import org.java.entity.Plantable;
 import org.java.entity.Systemusertable;
 
@@ -25,6 +26,13 @@ public class BaseAction extends ActionSupport implements ServletRequestAware,Ser
     protected static String coutline="";
     protected static String cointactsname="";
     private Plantable p;
+    private Clienttable clienttable;
+	public Clienttable getClienttable() {
+		return clienttable;
+	}
+	public void setClienttable(Clienttable clienttable) {
+		this.clienttable = clienttable;
+	}
 	public Plantable getP() {
 		return p;
 	}

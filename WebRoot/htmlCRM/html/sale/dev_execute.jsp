@@ -17,9 +17,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=path %>/htmlCRM/html/script/common.js"></script>
 <script type="text/javascript">
    $(function(){
-	  
+	  $("[name=baocun]").click(function(){
+		 var jieguo=  $(this).prev().val();
+		 var pid=$(this).prev().prev().val();
+		window.location.href="../lu/kaifa!jieguo.action?jieguo="+jieguo+"&pid="+pid;
+		alert("保存成功");
+	  });
 	
-   })
+   });
 </script>
 </head>
 <body>
@@ -27,10 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="page_title">客户开发计划 &gt; 执行计划</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="alert('开发失败，已归档。');window.location.href='dev.html';">终止开发</button>
+	<button class="common_button" onclick="alert('开发失败，已归档。');window.location.href='<%=path %>/lu/kaifa!zhongzhi.action?cid=${zd.CID }';">终止开发</button>
 	<button class="common_button" onclick="to('<%=path %>/lu/kaifa!zhiding.action');">返回</button>
+	
 	<button class="common_button" onclick="to('<%=path %>/lu/kaifa!zhiding.action');">制定计划</button>
-	<button class="common_button" onclick="alert('用户开发成功，已添加新客户记录。');window.location.href='dev.html';">开发成功</button>
+
+	
+	<button class="common_button" onclick="alert('用户开发成功，请添加新客户记录。');window.location.href='<%=path %>/lu/kaifa!succeed.action?cid=${zd.CID }';">开发成功</button>
 
 	</div>
 <table class="query_form_table">
@@ -90,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<td class="list_data_ltext" height="24"><input size="50" value="${p.planitem }" />
 		
 	<!--  <input type="button" class="common_button" onclick="to('<%=path %>/lu/kaifa!del.action?pid=${p.planid }&cid=${zd.CID  }');" value="删除"/>-->
-		<td class="list_data_ltext"><input name="jieguo" type="text"/>　
+		<td class="list_data_ltext"><input type="hidden" value="${p.planid }"/><input name="jieguo" value="${p.effect }" type="text"/>　
 	<button name="baocun" >保存</button>
 		</td>
 	</tr>

@@ -1,9 +1,11 @@
 package org.java.web;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import org.java.dao.LayDeveDao;
+import org.java.dao.marketingManagementDao;
 import org.java.entity.Plantable;
 
 public class LayDeve extends BaseAction {
@@ -107,9 +109,52 @@ public class LayDeve extends BaseAction {
     	 * 执行
     	 * **/
     	public String zhixing(){
+    		if(req.getParameter("cid")!=null&&req.getParameter("cid")!=""){
+    			cid=req.getParameter("cid");
+    		}
     	req.setAttribute("zd", dao.zhiding(cid));
     	List<Plantable> lp=dao.plan(cid);	
     	req.setAttribute("lp", lp);
     	return "zx";
+    	}	
+    	/*
+    	 * 保存执行结果
+    	 * **/
+    	public String jieguo(){
+    		Integer pid=Integer.parseInt(req.getParameter("pid"));
+    		String jieguo=req.getParameter("jieguo");
+    		dao.jieguo(pid, jieguo);
+    		
+    	 return	zhixing();
     	}
+    	/***
+    	 * 编写客户信息
+    	 * **/
+    	public String succeed(){
+    		req.setAttribute("zd", dao.zhiding(cid)); 
+    		req.setAttribute("dq", dao.diqu());
+    		marketingManagementDao mdao=new marketingManagementDao();
+    		 req.setAttribute("system",mdao.manager());
+    		return "succ";
+    	}
+    	public String bckh(){
+    		String cid=req.getParameter("cid");
+    		 Date d=new Date();
+    	     String id=String.valueOf(d.getTime());
+    	     
+    		  id=   id.substring(id.length()-3, id.length());
+    	     id="KH"+id;
+    	     getClienttable().setClientid(id);
+    		dao.tianjia(getClienttable());
+    		dao.update(cid);
+    		//System.out.println(cid+"\t"+getClienttable().getEnterprisegrade().getEgid()	);
+    		//System.out.println(getClienttable().getSystemusertable().getSuid());
+    	return	chushi();
+    	}
+    	public String zhongzhi(){
+    		 String cid=req.getParameter("cid");
+    		 dao.guidang(cid);
+    		return chushi();
+    	}
+    	
 }
