@@ -46,11 +46,11 @@ $(function(){
 });
 
 function del(msg){
-	
+	var cid=$("#cid").html();
 	if (window.confirm("确认删除吗？概要"+msg)){
 		
 		
-		window.location.href="../lu/chance!del.action?cid="+msg;
+		window.location.href="../lu/chance!del.action?cid="+cid;
 	}
 	
 }

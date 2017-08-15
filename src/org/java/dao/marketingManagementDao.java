@@ -28,6 +28,8 @@ public class marketingManagementDao extends ImplDao{
 	public void xiugai(Chancetable c){
 		ses=HibernateSessionFactory.getSession();
 		Transaction tran=ses.beginTransaction();
+		Chancestatetable s=  (Chancestatetable) ses.get(Chancestatetable.class, 2);
+		 c.setChancestatetable(s);
 		ses.update(c);
 		tran.commit();
 		ses.close();

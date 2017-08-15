@@ -32,6 +32,7 @@ public class ImplDao {
 	        	 ses.close();
 	         }
 	       //  System.out.println(users.getSuid());
+	        System.out.println(users.getSuid()+"sss");
 	  return users;
    }
 }

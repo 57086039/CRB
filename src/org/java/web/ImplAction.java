@@ -15,13 +15,15 @@ import javax.servlet.ServletException;
 import org.java.dao.ImplDao;
 import org.java.dao.marketingManagementDao;
 import org.java.entity.Chancetable;
+import org.java.entity.Menutable;
+import org.java.entity.Menutwo;
 import org.java.entity.Systemusertable;
 import org.java.util.HibernateSessionFactory;
 
 public class ImplAction extends BaseAction{
      ImplDao dao=new ImplDao();
 
-	public String login(){  //登陆
+	public String login(){  //登录
 		up();
 		 Systemusertable users=dao.users(getUname(), getUpwd());
 		   System.out.println(getUname()+" "+getUpwd());
@@ -33,9 +35,15 @@ public class ImplAction extends BaseAction{
 		   	
 		if(users!=null){
 			 req.getSession().setAttribute("users",users);
+			req.getSession().setAttribute("munus", users.getRestricttable().getMenus());
+			req.getSession().setAttribute("munus2", users.getRestricttable().getMenus2());
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			for(Menutwo m:users.getRestricttable().getMenus2()){
+				System.out.println(m.getMtname());
+			}
 			 return "login";
 		}else{
-			req.setAttribute("tishi", "用户名或者密码！");
+			req.setAttribute("提示", "请先登录");
 			return "index";
 		}
 		 
@@ -50,7 +58,7 @@ public class ImplAction extends BaseAction{
 	
 	/**
 	 * 
-	 * 得到销售机会表
+	 * 寰楀埌閿�敭鏈轰細琛�
 	 * ***/
 	public String  markplan() throws Exception{  
 		  
@@ -120,27 +128,11 @@ public class ImplAction extends BaseAction{
 		   size=Integer.parseInt(req.getParameter("size"));
 			System.out.println(size+"size");
 		return markplan();
-		/*req.setAttribute("index", index);
-		req.setAttribute("size", size);
-		marketingManagementDao mdao=new marketingManagementDao();
-		  List<Chancetable> list1=mdao.resources(index,size);
-		  List<Chancetable> list=new  ArrayList<Chancetable>();
-		  for (Chancetable chancetable : list1) {
-			   // chancetable.setCreatedate(new SimpleDateFormat("yyyy-MM-dd").format(chancetable.getCreatedate().));
-		      Date d=chancetable.getCreatedate();
-		      SimpleDateFormat st=new SimpleDateFormat("yyyy年-MM月-dd日");
-		        String aa= st.format(d);
-		        chancetable.setTime(aa);
-		      list.add(chancetable);
-		  }
-		   req.setAttribute("list", list);
-		   System.out.println(list.size());
-		   count=mdao.Count();
-		      
-		     req.setAttribute("count", count);
-		     req.setAttribute("MaxPage",getMaxPage());*/
-		
 	}
+	/**
+	 *分页
+	 * 
+	 * ****/
      /*
       * 指派
       * **/
@@ -161,8 +153,22 @@ public class ImplAction extends BaseAction{
     	  
     	return markplan();
     }
+
+	
+	
+	/**
+	 * 鍔犺浇鎵�湁瀹㈡埛缁忕悊
+	 * */
+    public String add(){
+    	marketingManagementDao  mdao= new marketingManagementDao();
+   	 
+   	 List<Object[]> managers=mdao.manager();
+   	 req.setAttribute("managers", managers);
+   	 return "add";
+    }	
+
     /*
-     * 添加销售机会表
+     * 娣诲姞閿�敭鏈轰細琛�
      * **/
 	public String insert() throws Exception{
 		marketingManagementDao  mdao= new marketingManagementDao();
@@ -205,12 +211,16 @@ public class ImplAction extends BaseAction{
 	 * **/
 	public String xiugai() throws Exception{
 		marketingManagementDao  mdao= new marketingManagementDao();
-		Systemusertable s=mdao.user(req.getParameter("uid"));
-		if(getCt().getSystemusertable().getSuid()==null||getCt().getSystemusertable().getSuid()=="-1")
-		getCt().setSystemusertable(s);
-		if(getCt().getSystemusertable().getSuid()!=null){
+     	Systemusertable s=mdao.user(req.getParameter("uid"));
+		
+		
+		System.out.println(getCt().getSystemusertable()+"天下");
+		if(getCt().getSystemusertable()!=null){
 	    	mdao.zhipai(getCt().getSystemusertable().getSuid(), getCt().getCid(),getCt().getTime());
 	    }
+		if(getCt().getSystemusertable()==null)
+		getCt().setSystemusertable(s);
+	
 		mdao.xiugai(getCt());
 		return markplan();
 	}

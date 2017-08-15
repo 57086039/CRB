@@ -14,6 +14,26 @@ public class Restricttable implements java.io.Serializable {
 	private Byte rid;
 	private String rpoint;
 	private Set systemusertables = new HashSet(0);
+	
+	
+	public Set<Menutable> getMenus() {
+		return menus;
+	}
+
+	public void setMenus(Set<Menutable> menus) {
+		this.menus = menus;
+	}
+
+	// Constructors
+	private Set<Menutable> menus=new HashSet<Menutable>();
+	private Set<Menutwo> menus2=new HashSet<Menutwo>();
+	public Set<Menutwo> getMenus2() {
+		return menus2;
+	}
+
+	public void setMenus2(Set<Menutwo> menus2) {
+		this.menus2 = menus2;
+	}
 
 	// Constructors
 

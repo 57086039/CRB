@@ -8,7 +8,9 @@
     <class name="org.java.entity.Filetable" table="FILETABLE" schema="LUWEI">
         <id name="fid" type="java.lang.Long">
             <column name="FID" precision="11" scale="0" />
-            <generator class="assigned" />
+            <generator class="sequence" >
+            	<param name="sequence">File_sq</param>
+            </generator>
         </id>
         <many-to-one name="servicetable" class="org.java.entity.Servicetable" fetch="select">
             <column name="SERID" precision="11" scale="0" />

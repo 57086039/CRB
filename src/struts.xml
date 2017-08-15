@@ -8,4 +8,5 @@
       </action>
    </package>
    <include file="struts-lu.xml"/>
+   <include file="struts-pyl.xml"/>
 </struts>    

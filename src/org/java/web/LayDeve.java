@@ -156,5 +156,11 @@ public class LayDeve extends BaseAction {
     		 dao.guidang(cid);
     		return chushi();
     	}
-    	
+    	public String chakan(){
+    		String ccid= req.getParameter("cid");
+    		req.setAttribute("zd", dao.zhiding(ccid));
+    		List<Plantable> lp=dao.plan(ccid);	
+        	req.setAttribute("lp", lp);
+    		return "chakan";
+    	}
 }

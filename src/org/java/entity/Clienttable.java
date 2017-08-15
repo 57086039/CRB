@@ -13,24 +13,6 @@ public class Clienttable implements java.io.Serializable {
 
 	private String clientid;
 	private Systemusertable systemusertable;
-	@Override
-	public String toString() {
-		return "Clienttable [clientid=" + clientid + ", systemusertable="
-				+ systemusertable + ", enterprisegrade=" + enterprisegrade
-				+ ", clientname=" + clientname + ", area=" + area
-				+ ", satisficing=" + satisficing + ", creditgrder="
-				+ creditgrder + ", csite=" + csite + ", postalcode="
-				+ postalcode + ", phone=" + phone + ", fax=" + fax + ", curl="
-				+ curl + ", license=" + license + ", legalpreson="
-				+ legalpreson + ", registeredprice=" + registeredprice
-				+ ", annualprice=" + annualprice + ", depositbank="
-				+ depositbank + ", banknumber=" + banknumber
-				+ ", governmentnumber=" + governmentnumber + ", centralnumber="
-				+ centralnumber + ", ordertables=" + ordertables
-				+ ", contacttables=" + contacttables + ", servicetables="
-				+ servicetables + ", losstables=" + losstables + "]";
-	}
-
 	private Enterprisegrade enterprisegrade;
 	private String clientname;
 	private String area;
@@ -169,7 +151,7 @@ public class Clienttable implements java.io.Serializable {
 		return this.creditgrder;
 	}
 
-	public void setCreditgrder(Integer	 creditgrder) {
+	public void setCreditgrder(Integer creditgrder) {
 		this.creditgrder = creditgrder;
 	}
 

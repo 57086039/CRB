@@ -69,8 +69,10 @@ body {
 	border-collapse:collapse; 
 	border-top:solid 1px #666;
 	border-bottom:solid 1px #666;
+	text-align:center;
 }
 .data_list_table th{
+	text-align:center;
 	font-size:12px;
 	font-weight:normal;
 	border-bottom:solid 1px #8c8c8c;
@@ -80,24 +82,25 @@ body {
 	height:30px;
 }
 .data_list_table td{
+	text-align:center;
 	background-color:#eeeeff;
 	border-bottom:solid 1px #8c8c8c;
 	border-left:solid 1px #fff;
 	height:25px;
 }
 .list_data_number{
-	text-align:right;
+	text-align:center;
 	padding-right:6px;
 }
 .list_data_text{
 	text-align:center;
 }
 .list_data_ltext{
-	text-align:left;
+	text-align:center;
 	padding-left:6px;
 }
 .list_data_op{
-	text-align:left;
+	text-align:center;
 	padding-left:6px;
 }
 .pager{

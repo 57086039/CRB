@@ -1,4 +1,4 @@
-<!DOCTYPE>
+
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt"  prefix="c"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
@@ -6,12 +6,11 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE>
 <html>
 <head>
 <title>jb-aptech毕业设计项目</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=path %>/htmlCRM/html/css/style.css" rel="stylesheet" type="text/css">
 <script src="<%=path %>/htmlCRM/html/script/jquery-1.5.2.js"></script>
 <script src="<%=path %>/htmlCRM/html/script/common.js"></script>

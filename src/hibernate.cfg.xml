@@ -43,6 +43,8 @@
 	<mapping resource="org/java/entity/Servicetypetable.hbm.xml" />
 	<mapping resource="org/java/entity/Productstocktable.hbm.xml" />
 	<mapping resource="org/java/entity/Orderdetail.hbm.xml" />
+	<mapping resource="org/java/entity/Menutable.hbm.xml" />
+	<mapping resource="org/java/entity/Menutwo.hbm.xml" />
 
 </session-factory>
 

@@ -1,10 +1,11 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/heads/pyl
 eclipse.preferences.version=1
 encoding//WebRoot/htmlCRM/html/css/style.css=GBK
 encoding//WebRoot/htmlCRM/html/cust/cust/list.jsp=UTF-8
 encoding//WebRoot/htmlCRM/html/cust/lost/list.jsp=UTF-8
-encoding//WebRoot/htmlCRM/html/sale/add.jsp=UTF-8
-encoding//WebRoot/htmlCRM/html/sale/dev_execute.jsp=UTF-8
-encoding//WebRoot/htmlCRM/html/sale/dispatch.jsp=UTF-8
-encoding//WebRoot/htmlCRM/html/sale/edit.jsp=UTF-8
-encoding//WebRoot/htmlCRM/html/sale/list.jsp=UTF-8
 encoding//WebRoot/htmlCRM/html/script/common.js=UTF-8
+encoding//WebRoot/htmlCRM/lib/utf8-php/php/config.json=UTF-8
+encoding//src/org/java/entity/Chancetable.java=UTF-8
+encoding//src/org/java/web/ImplAction.java=UTF-8

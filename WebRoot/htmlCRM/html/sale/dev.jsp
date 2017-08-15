@@ -99,7 +99,7 @@ function del(msg){
 		<c:if test="${k.CSID==4 }">
 		<td class="list_data_text">已归档</td>
 		<td class="list_data_op">
-			<img onclick="to('dev_detail.html');" title="查看" src="<%=path %>/htmlCRM/html/images/bt_detail.gif" class="op_button" />
+			<img onclick="to('<%=path %>/lu/kaifa!chakan.action?cid=${k.CID }');" title="查看" src="<%=path %>/htmlCRM/html/images/bt_detail.gif" class="op_button" />
 		</td>
 		</c:if>
 		<c:if test="${k.CSID==3 }">

@@ -25,7 +25,7 @@ public class LayDeveDao extends ImplDao {
 	
     public List<Map<String, Object>> LayDeve(int index,int size,String name,String coutline,String cointactsname){
     	  ses=HibernateSessionFactory.getSession();
-    	  String sql="select c.*,d.allotdate shijian ,cast(c.suid as varchar(20)) as creat,cast(d.suid as varchar2(20)) as zhipai,cast(c.contactsphone as varchar2(20)) as dianhua from chanceTable c,chanceDisTable d ,chanceStateTable s  where c.cid=d.cid and s.csid=c.csid and c.csid=3  ";
+    	  String sql="select c.*,d.allotdate shijian ,cast(c.suid as varchar(20)) as creat,cast(d.suid as varchar2(20)) as zhipai,cast(c.contactsphone as varchar2(20)) as dianhua from chanceTable c,chanceDisTable d ,chanceStateTable s  where c.cid=d.cid and s.csid=c.csid and (c.csid=3 or c.csid=4) ";
     	  if(name!=null&&name!="")
   			sql+=" and clientelename like '%"+name+"%'";
   		if(coutline!=null&&coutline!="")
@@ -50,7 +50,7 @@ public class LayDeveDao extends ImplDao {
 	
 	public Integer Count(String name,String coutline,String cointactsname){
 		ses=HibernateSessionFactory.getSession();
-		String sql="select count(*) from chanceTable c,chanceDisTable d where c.cid=d.cid and c.csid=3 ";  	 		
+		String sql="select count(*) from chanceTable c,chanceDisTable d where c.cid=d.cid and (c.csid=3 or c.csid=4)";  	 		
 		if(name!=null&&name!="")
 			sql+=" and clientelename like '%"+name+"%'";
 		if(coutline!=null&&coutline!="")

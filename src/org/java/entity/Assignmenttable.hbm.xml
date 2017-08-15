@@ -8,7 +8,9 @@
     <class name="org.java.entity.Assignmenttable" table="ASSIGNMENTTABLE" schema="LUWEI">
         <id name="aid" type="java.lang.Long">
             <column name="AID" precision="11" scale="0" />
-            <generator class="assigned" />
+            <generator class="sequence" >
+            	<param name="sequence">AssignmentTable_sq</param>
+            </generator>
         </id>
         <many-to-one name="systemusertableBySuids" class="org.java.entity.Systemusertable" fetch="select">
             <column name="SUIDS" length="11" />
@@ -16,7 +18,7 @@
         <many-to-one name="systemusertableBySuid" class="org.java.entity.Systemusertable" fetch="select">
             <column name="SUID" length="11" />
         </many-to-one>
-        <many-to-one name="servicetable" class="org.java.entity.Servicetable" fetch="select">
+        <many-to-one name="servicetable" class="org.java.entity.Servicetable" lazy="false" fetch="select">
             <column name="SERID" precision="11" scale="0" />
         </many-to-one>
         <property name="allocationtime" type="java.util.Date">

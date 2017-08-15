@@ -12,30 +12,17 @@ public class Chancetable implements java.io.Serializable {
 
 	// Fields
 
-	@Override
-	public String toString() {
-		return "Chancetable [cid=" + cid + ", systemusertable="
-				+ systemusertable + ", chancestatetable=" + chancestatetable
-				+ ", csource=" + csource + ", clientelename=" + clientelename
-				+ ", codds=" + codds + ", coutline=" + coutline
-				+ ", cointactsname=" + cointactsname + ", contactsphone="
-				+ contactsphone + ", describe=" + describe + ", createdate="
-				+ createdate + ", plantables=" + plantables
-				+ ", chancedistables=" + chancedistables + ", time=" + time
-				+ "]";
-	}
-
 	private String cid;
 	private Systemusertable systemusertable;
 	private Chancestatetable chancestatetable;
-	private String csource;  //机会来源
-	private String clientelename;//客户名称
-	private Short codds;   //当前机会的成功几率
-	private String coutline; //当前销售机会的概要信息
-	private String cointactsname; //当前机会的主要联系人
-	private String contactsphone;//联系电话
-	private String describe;   //对当前机会的描述
-	private Date createdate;//机会创建的时间
+	private String csource;  //鏈轰細鏉ユ簮
+	private String clientelename;//瀹㈡埛鍚嶇О
+	private Short codds;   //褰撳墠鏈轰細鐨勬垚鍔熷嚑鐜�	
+	private String coutline; //褰撳墠閿�敭鏈轰細鐨勬瑕佷俊鎭�	
+	private String cointactsname; //褰撳墠鏈轰細鐨勪富瑕佽仈绯讳汉
+	private String contactsphone;//鑱旂郴鐢佃瘽
+	private String describe;   //瀵瑰綋鍓嶆満浼氱殑鎻忚堪
+	private Date createdate;//鏈轰細鍒涘缓鐨勬椂闂�
 	private Set plantables = new HashSet(0);
 	private Set chancedistables = new HashSet(0);
 	private String time;
