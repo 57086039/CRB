@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<!-- <img src="picture/1.jpg" alt="" width="500px" height="330px"> -->
 		</div>
 	</div>
-	<h1>水水水水</h1>
+	<h1>你好呀</h1>
 </div>
 
 <script src="<%=path %>/htmlCRM/public/js/jquery-3.1.1.min.js"></script>
